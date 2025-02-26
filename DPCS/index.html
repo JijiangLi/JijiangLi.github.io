@@ -21,12 +21,12 @@
   <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
   <meta name="twitter:card" content="summary_large_image">
   <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="keywords" content="Projector-camera systems, projection mapping, style transfer, projector compensation.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>DPCS: Path Tracing-Based Differentiable Projector-Camera Systems</title>
-  <link rel="icon" type="image/x-icon" href="static/images/icon.png">
+  <title>LAPIG: Language Guided Projector Image Generation with Surface Adaptation and Stylization</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="static/css/bulma.min.css">
@@ -36,13 +36,133 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
 
+  <style>
+    .gradient-text {
+      /* 字体大小 */
+      font-weight: bold;
+      white-space: nowrap;
+      /* 防止文本换行 */
+      background: linear-gradient(90deg,
+          #ff595e, #ff924c, #ffca3a, #c5ca30,
+          #8ac926, #52a675, #1982c4, #4267ac,
+          #6a4c93, #ff595e, #ff924c);
+      background-size: 1200% 100%;
+      /* 扩大渐变背景尺寸以形成环形 */
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: seamlessScroll 6s linear infinite;
+      /* 让渐变持续滚动 */
+    }
+
+    @keyframes seamlessScroll {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      100% {
+        background-position: 100% 50%;
+      }
+    }
+
+    .blue-text {
+      color: hsl(204, 84%, 62%) !important;
+    }
+
+    .black-text {
+      color: hsl(0, 0%, 0%) !important;
+    }
+
+    .zoom-component {
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .video-grid-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .image-box {
+      position: relative;
+      aspect-ratio: 1/1;
+      cursor: crosshair;
+    }
+
+    .video-box {
+      position: relative;
+    }
+
+    .video-box video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .video-box img {
+      position: absolute;
+      bottom: -1px;
+      right: -1px;
+      width: 25%;
+    }
+
+    .image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .zoom-cursor {
+      position: absolute;
+      width: 20%;
+      height: 20%;
+      border: 2px solid #fff;
+      box-shadow: 0 0 5px rgba(0,0,0,0.3);
+      pointer-events: none;
+      display: none;
+    }
+
+    .text-row {
+      text-align: center;
+      padding: 0 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .zoom-preview {
+      background: #f0f0f0;
+      background-size: 500% 500%;
+    }
+
+    .placeholder {
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><rect width="100" height="100" fill="#ddd"/></svg>');
+    }
+  </style>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+
 </head>
+
+
+
+
+
+  
 
 <body>
 
