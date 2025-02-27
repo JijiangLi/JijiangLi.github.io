@@ -36,6 +36,64 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
 
+  <style>
+    .blue-text {
+      color: hsl(204, 84%, 62%) !important;
+    }
+
+    .zoom-component {
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .image-box {
+      position: relative;
+      aspect-ratio: 1/1;
+      cursor: crosshair;
+    }
+
+    .image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .zoom-cursor {
+      position: absolute;
+      width: 20%;
+      height: 20%;
+      border: 2px solid #fff;
+      box-shadow: 0 0 5px rgba(0,0,0,0.3);
+      pointer-events: none;
+      display: none;
+    }
+
+    .text-row {
+      text-align: center;
+      padding: 0 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .zoom-preview {
+      background: #f0f0f0;
+      background-size: 500% 500%;
+    }
+
+    .placeholder {
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><rect width="100" height="100" fill="#ddd"/></svg>');
+    }
+  </style>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
@@ -224,7 +282,7 @@
 
 
   <!-- Video carousel -->
-  <section class="hero is-small">
+  <!-- <section class="hero is-small">
     <div class="hero-body">
       <div class="container">
         <h2 class="title is-3">Applications</h2>
@@ -256,11 +314,231 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   <!-- End video carousel -->
 
+  <section class="section hero is-white" id="relit">
+    <div class="hero-body has-text-centered">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">Comparison on ProCams Relighting</h2>
 
+        <p>The following examples are from our paper. <span class="blue-text" style="font-family: 'Comic Sans MS'; font-size: 20px;">Try to move over to the images ⤸</span> and observe them.</p>
 
+        <p>&nbsp;</p>
+
+        <div class="zoom-component">
+          <div class="grid-container">
+            <!-- 主图区域 -->
+            <div class="image-box" data-index="0">
+              <img src="static/images/compare/relit/projector_input.png" alt="projector input">
+              <div class="zoom-cursor"></div>
+            </div>
+            <div class="image-box" data-index="1">
+              <img src="static/images/compare/relit/scene.png" alt="scene">
+              <div class="zoom-cursor"></div>
+            </div>
+            <div class="image-box" data-index="2">
+              <img src="static/images/compare/relit/TPS+SL.png" alt="TPS+SL">
+              <div class="zoom-cursor"></div>
+            </div>
+            <div class="image-box" data-index="3">
+              <img src="static/images/compare/relit/CompenNeSt++_new.png" alt="CompenNeSt++">
+              <div class="zoom-cursor"></div>
+            </div>
+            <div class="image-box" data-index="4">
+              <img src="static/images/compare/relit/DeProCams.png" alt="DeProCams">
+              <div class="zoom-cursor"></div>
+            </div>
+            <div class="image-box" data-index="5">
+              <img src="static/images/compare/relit/DPCS.png" alt="DPCS">
+              <div class="zoom-cursor"></div>
+            </div>
+            <div class="image-box" data-index="6">
+              <img src="static/images/compare/relit/GT.png" alt="GT">
+              <div class="zoom-cursor"></div>
+            </div>
+
+            <!-- 放大区域 -->
+            <div class="image-box zoom-preview placeholder" data-preview="0"></div>
+            <div class="image-box zoom-preview placeholder" data-preview="1"></div>
+            <div class="image-box zoom-preview placeholder" data-preview="2"></div>
+            <div class="image-box zoom-preview placeholder" data-preview="3"></div>
+            <div class="image-box zoom-preview placeholder" data-preview="4"></div>
+            <div class="image-box zoom-preview placeholder" data-preview="5"></div>
+            <div class="image-box zoom-preview placeholder" data-preview="6"></div>
+
+            <!-- 文本区域 -->
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Projector input</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Scene</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">TPS+SL</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">CompenNeSt++</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">DeProCams</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">DPCS (ours)</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Cam-captured (GT)</h2></div>
+          </div>
+        </div>
+
+        <div class="zoom-component">
+          <div class="grid-container">
+            <!-- 主图区域 -->
+            <div class="image-box" data-index="0">
+              <img src="static/images/compare/relit/2/projector_input.png" alt="projector input">
+              <div class="zoom-cursor"></div>
+            </div>
+            <div class="image-box" data-index="1">
+              <img src="static/images/compare/relit/2/scene.png" alt="scene">
+              <div class="zoom-cursor"></div>
+            </div>
+            <div class="image-box" data-index="2">
+              <img src="static/images/compare/relit/2/TPS+SL.png" alt="TPS+SL">
+              <div class="zoom-cursor"></div>
+            </div>
+            <div class="image-box" data-index="3">
+              <img src="static/images/compare/relit/2/CompenNeSt++.png" alt="CompenNeSt++">
+              <div class="zoom-cursor"></div>
+            </div>
+            <div class="image-box" data-index="4">
+              <img src="static/images/compare/relit/2/DeProCams.png" alt="DeProCams">
+              <div class="zoom-cursor"></div>
+            </div>
+            <div class="image-box" data-index="5">
+              <img src="static/images/compare/relit/2/DPCS.png" alt="DPCS">
+              <div class="zoom-cursor"></div>
+            </div>
+            <div class="image-box" data-index="6">
+              <img src="static/images/compare/relit/2/GT.png" alt="GT">
+              <div class="zoom-cursor"></div>
+            </div>
+
+            <!-- 放大区域 -->
+            <div class="image-box zoom-preview placeholder" data-preview="0"></div>
+            <div class="image-box zoom-preview placeholder" data-preview="1"></div>
+            <div class="image-box zoom-preview placeholder" data-preview="2"></div>
+            <div class="image-box zoom-preview placeholder" data-preview="3"></div>
+            <div class="image-box zoom-preview placeholder" data-preview="4"></div>
+            <div class="image-box zoom-preview placeholder" data-preview="5"></div>
+            <div class="image-box zoom-preview placeholder" data-preview="6"></div>
+
+            <!-- 文本区域 -->
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Projector input</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Scene</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">TPS+SL</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">CompenNeSt++</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">DeProCams</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">DPCS (ours)</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Cam-captured (GT)</h2></div>
+          </div>
+        </div>
+
+        <!-- zoom-in plus title -->
+        <h2 class="title is-3">Comparison on Projector Compensation</h2>
+        <div class="zoom-component">
+          <div class="grid-container">
+            <!-- 主图区域 -->
+            <div class="image-box" data-index="0">
+              <img src="static/images/compare/compen/surface.png" alt="projector input">
+              <div class="zoom-cursor"></div>
+            </div>
+            <div class="image-box" data-index="1">
+              <img src="static/images/compare/compen/uncompen.png" alt="scene">
+              <div class="zoom-cursor"></div>
+            </div>
+            <div class="image-box" data-index="2">
+              <img src="static/images/compare/compen/TPS+SL.png" alt="TPS+SL">
+              <div class="zoom-cursor"></div>
+            </div>
+            <div class="image-box" data-index="3">
+              <img src="static/images/compare/compen/CompenNeSt++.png" alt="CompenNeSt++">
+              <div class="zoom-cursor"></div>
+            </div>
+            <div class="image-box" data-index="4">
+              <img src="static/images/compare/compen/DeProCams.png" alt="DeProCams">
+              <div class="zoom-cursor"></div>
+            </div>
+            <div class="image-box" data-index="5">
+              <img src="static/images/compare/compen/DPCS.png" alt="DPCS">
+              <div class="zoom-cursor"></div>
+            </div>
+            <div class="image-box" data-index="6">
+              <img src="static/images/compare/compen/desire.png" alt="GT">
+              <div class="zoom-cursor"></div>
+            </div>
+
+            <!-- 放大区域 -->
+            <div class="image-box zoom-preview placeholder" data-preview="0"></div>
+            <div class="image-box zoom-preview placeholder" data-preview="1"></div>
+            <div class="image-box zoom-preview placeholder" data-preview="2"></div>
+            <div class="image-box zoom-preview placeholder" data-preview="3"></div>
+            <div class="image-box zoom-preview placeholder" data-preview="4"></div>
+            <div class="image-box zoom-preview placeholder" data-preview="5"></div>
+            <div class="image-box zoom-preview placeholder" data-preview="6"></div>
+
+            <!-- 文本区域 -->
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Surface</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Uncompensated</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">TPS+SL</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">CompenNeSt++</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">DeProCams</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">DPCS (ours)</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Desired</h2></div>
+          </div>
+        </div>
+        <div class="zoom-component">
+          <div class="grid-container">
+            <!-- 主图区域 -->
+            <div class="image-box" data-index="0">
+              <img src="static/images/compare/compen/2/surface.png" alt="projector input">
+              <div class="zoom-cursor"></div>
+            </div>
+            <div class="image-box" data-index="1">
+              <img src="static/images/compare/compen/2/uncompen.png" alt="scene">
+              <div class="zoom-cursor"></div>
+            </div>
+            <div class="image-box" data-index="2">
+              <img src="static/images/compare/compen/2/TPS+SL.png" alt="TPS+SL">
+              <div class="zoom-cursor"></div>
+            </div>
+            <div class="image-box" data-index="3">
+              <img src="static/images/compare/compen/2/CompenNeSt++.png" alt="CompenNeSt++">
+              <div class="zoom-cursor"></div>
+            </div>
+            <div class="image-box" data-index="4">
+              <img src="static/images/compare/compen/2/DeProCams.png" alt="DeProCams">
+              <div class="zoom-cursor"></div>
+            </div>
+            <div class="image-box" data-index="5">
+              <img src="static/images/compare/compen/2/DPCS.png" alt="DPCS">
+              <div class="zoom-cursor"></div>
+            </div>
+            <div class="image-box" data-index="6">
+              <img src="static/images/compare/compen/2/desire.png" alt="GT">
+              <div class="zoom-cursor"></div>
+            </div>
+
+            <!-- 放大区域 -->
+            <div class="image-box zoom-preview placeholder" data-preview="0"></div>
+            <div class="image-box zoom-preview placeholder" data-preview="1"></div>
+            <div class="image-box zoom-preview placeholder" data-preview="2"></div>
+            <div class="image-box zoom-preview placeholder" data-preview="3"></div>
+            <div class="image-box zoom-preview placeholder" data-preview="4"></div>
+            <div class="image-box zoom-preview placeholder" data-preview="5"></div>
+            <div class="image-box zoom-preview placeholder" data-preview="6"></div>
+
+            <!-- 文本区域 -->
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Surface</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Uncompensated</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">TPS+SL</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">CompenNeSt++</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">DeProCams</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">DPCS (ours)</h2></div>
+            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Desired</h2></div>
+          </div>
+        </div>
+        <!-- zoom-in plus title -->
+
+      </div>
+    </div>
+  </section>
 
 
 
@@ -323,6 +601,56 @@
 
   <!-- End of Statcounter Code -->
 
+  <script>
+    document.querySelectorAll('.zoom-component').forEach(component => {
+      const boxes = component.querySelectorAll('.image-box[data-index]');
+      const previews = component.querySelectorAll('.zoom-preview');
+      let isHovering = false;
+
+      boxes.forEach(box => {
+        box.addEventListener('mouseenter', () => {
+          isHovering = true;
+          component.querySelectorAll('.zoom-cursor').forEach(c => c.style.display = 'block');
+        });
+
+        box.addEventListener('mousemove', (e) => {
+          if (!isHovering) return;
+          
+          // 获取当前悬停盒子的尺寸和位置
+          const rect = e.target.getBoundingClientRect();
+          const xPercent = (e.clientX - rect.left) / rect.width;
+          const yPercent = (e.clientY - rect.top) / rect.height;
+
+          // 更新所有光标位置
+          boxes.forEach(b => {
+            const cursor = b.querySelector('.zoom-cursor');
+            cursor.style.left = `${xPercent * 100 - 10}%`;
+            cursor.style.top = `${yPercent * 100 - 10}%`;
+          });
+
+          // 同时更新所有预览区域
+          boxes.forEach((b, index) => {
+            const preview = component.querySelector(`[data-preview="${index}"]`);
+            const imgSrc = b.querySelector('img').src;
+            
+            preview.style.backgroundImage = `url(${imgSrc})`;
+            preview.classList.remove('placeholder');
+            preview.style.backgroundPosition =
+              `${xPercent * 100}% ${yPercent * 100}%`;
+          });
+        });
+
+        box.addEventListener('mouseleave', () => {
+          isHovering = false;
+          component.querySelectorAll('.zoom-cursor').forEach(c => c.style.display = 'none');
+          previews.forEach(p => {
+            p.style.backgroundImage = '';
+            p.classList.add('placeholder');
+          });
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>
