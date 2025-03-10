@@ -71,7 +71,7 @@
       width: 20%;
       height: 20%;
       border: 2px solid #fff;
-      box-shadow: 0 0 5px rgba(0,0,0,0.3);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
       pointer-events: none;
       display: none;
     }
@@ -110,12 +110,14 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">DPCS: Path Tracing-Based Differentiable Projector-Camera Systems</h1>
+            <h1 class="title is-1 publication-title">DPCS: Path Tracing-Based Differentiable Projector-Camera Systems
+            </h1>
             <h3 class="title is-5 publication-title">To appear in IEEE VR 2025 / IEEE TVCG</h3>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="https://lowranker.github.io/JijiangLi.github.io/" target="_blank">Jijiang Li</a><sup>1</sup>,</span>
+                <a href="https://lowranker.github.io/JijiangLi.github.io/" target="_blank">Jijiang
+                  Li</a><sup>1</sup>,</span>
               <span class="author-block">
                 <a href="https://li-colonel.github.io/" target="_blank">Qingyue Deng</a><sup>1</sup>,</span>
               <span class="author-block">
@@ -138,8 +140,8 @@
               <div class="publication-links">
                 <!-- Arxiv PDF link -->
                 <span class="link-block">
-                  <a href="https://drive.google.com/file/d/1ETrjp491KQoQ5IHAtkMKRJKFxMl3SKIl/view?usp=drive_link" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://drive.google.com/file/d/1ETrjp491KQoQ5IHAtkMKRJKFxMl3SKIl/view?usp=drive_link"
+                    target="_blank" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                     </span>
@@ -148,7 +150,7 @@
                 </span>
 
                 <!-- Supplementary PDF link -->
-<!--                 <span class="link-block">
+                <!--                 <span class="link-block">
                   <a href="static/pdfs/supplementary_material.pdf" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
@@ -170,7 +172,7 @@
                 </span>
 
                 <!-- ArXiv abstract Link -->
-<!--                 <span class="link-block">
+                <!--                 <span class="link-block">
                   <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
@@ -189,18 +191,18 @@
 
 
   <!-- Teaser video-->
- <section class="hero teaser">
+  <section class="hero teaser">
     <div class="container is-max-desktop">
       <div class="hero-body">
         <video poster="" id="tree" autoplay controls muted loop height="100%">
           <source src="static/videos/VR25_DPCS_video_v4_720p.mp4" type="video/mp4">
         </video>
-         <h2 class="subtitle has-text-centered">
+        <h2 class="subtitle has-text-centered">
           Short video showing our work.
-        </h2> 
+        </h2>
       </div>
     </div>
-  </section> 
+  </section>
   <!-- End teaser video -->
 
   <!-- Paper abstract -->
@@ -211,19 +213,32 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Projector-camera systems (ProCams) simulation aims to model the physical project-and-capture process and associated
-              scene parameters of a ProCams, and is crucial for spatial augmented reality (SAR) applications such as ProCams relighting and
-              projector compensation. Recent advances use an end-to-end neural network to learn the project-and-capture process. However, these
-              network-based methods often implicitly encapsulate scene parameters, such as surface material, gamma and white balance in the
-              network parameters, and are less interpretable and hard for novel scene simulation. Moreover, neural networks usually learn the
-              indirect illumination implicitly in an image-to-image translation way which leads to poor performance in simulating complex projection
-              effects such as soft-shadow and interreflection. In this paper, we introduce a novel path tracing-based differentiable projector-camera
-              systems (DPCS), offering a differentiable ProCams simulation method which explicitly integrates multi-bounce path tracing. Our DPCS
-              models the physical project-and-capture process using differentiable physically-based rendering (PBR), thus the scene parameters can
-              be explicitly decoupled and learned using much fewer samples. Moreover, our physically-based method not only enables high quality
-              downstream ProCams tasks, such as ProCams relighting and projector compensation, but also allows novel scene simulation using the
-              learned scene parameters. In experiments, DPCS demonstrates clear advantages over previous approaches in ProCams simulation,
-              offering better interpretability, more efficient handling of complex interreflection and shadow, and requiring fewer training samples.
+              Projector-camera systems (ProCams) simulation aims to model the physical project-and-capture process and
+              associated
+              scene parameters of a ProCams, and is crucial for spatial augmented reality (SAR) applications such as
+              ProCams relighting and
+              projector compensation. Recent advances use an end-to-end neural network to learn the project-and-capture
+              process. However, these
+              network-based methods often implicitly encapsulate scene parameters, such as surface material, gamma and
+              white balance in the
+              network parameters, and are less interpretable and hard for novel scene simulation. Moreover, neural
+              networks usually learn the
+              indirect illumination implicitly in an image-to-image translation way which leads to poor performance in
+              simulating complex projection
+              effects such as soft-shadow and interreflection. In this paper, we introduce a novel path tracing-based
+              differentiable projector-camera
+              systems (DPCS), offering a differentiable ProCams simulation method which explicitly integrates
+              multi-bounce path tracing. Our DPCS
+              models the physical project-and-capture process using differentiable physically-based rendering (PBR),
+              thus the scene parameters can
+              be explicitly decoupled and learned using much fewer samples. Moreover, our physically-based method not
+              only enables high quality
+              downstream ProCams tasks, such as ProCams relighting and projector compensation, but also allows novel
+              scene simulation using the
+              learned scene parameters. In experiments, DPCS demonstrates clear advantages over previous approaches in
+              ProCams simulation,
+              offering better interpretability, more efficient handling of complex interreflection and shadow, and
+              requiring fewer training samples.
             </p>
           </div>
         </div>
@@ -234,7 +249,7 @@
 
 
   <!-- Image carousel -->
-<section class="hero is-small">
+  <section class="hero is-small">
     <div class="hero-body">
       <div class="container">
         <div id="results-carousel" class="carousel results-carousel">
@@ -322,7 +337,9 @@
       <div class="container is-max-desktop">
         <h2 class="title is-3">Comparison on ProCams Relighting</h2>
 
-        <p>The following examples are from our paper. <span class="blue-text" style="font-family: 'Comic Sans MS'; font-size: 20px;">Try to move over to the images ⤸</span> and observe them.</p>
+        <p>The following examples are from our paper. <span class="blue-text"
+            style="font-family: 'Comic Sans MS'; font-size: 20px;">Try to move over to the images ⤸</span> and observe
+          them.</p>
 
         <p>&nbsp;</p>
 
@@ -368,13 +385,27 @@
             <div class="image-box zoom-preview placeholder" data-preview="6"></div>
 
             <!-- 文本区域 -->
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Projector input</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Scene</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">TPS+SL</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">CompenNeSt++</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">DeProCams</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">DPCS (ours)</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Cam-captured (GT)</h2></div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">Projector input</h2>
+            </div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">Scene</h2>
+            </div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">TPS+SL</h2>
+            </div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">CompenNeSt++</h2>
+            </div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">DeProCams</h2>
+            </div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">DPCS (ours)</h2>
+            </div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">Cam-captured (GT)</h2>
+            </div>
           </div>
         </div>
 
@@ -420,13 +451,27 @@
             <div class="image-box zoom-preview placeholder" data-preview="6"></div>
 
             <!-- 文本区域 -->
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Projector input</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Scene</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">TPS+SL</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">CompenNeSt++</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">DeProCams</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">DPCS (ours)</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Cam-captured (GT)</h2></div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">Projector input</h2>
+            </div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">Scene</h2>
+            </div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">TPS+SL</h2>
+            </div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">CompenNeSt++</h2>
+            </div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">DeProCams</h2>
+            </div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">DPCS (ours)</h2>
+            </div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">Cam-captured (GT)</h2>
+            </div>
           </div>
         </div>
 
@@ -474,13 +519,27 @@
             <div class="image-box zoom-preview placeholder" data-preview="6"></div>
 
             <!-- 文本区域 -->
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Surface</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Uncompensated</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">TPS+SL</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">CompenNeSt++</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">DeProCams</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">DPCS (ours)</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Desired</h2></div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">Surface</h2>
+            </div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">Uncompensated</h2>
+            </div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">TPS+SL</h2>
+            </div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">CompenNeSt++</h2>
+            </div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">DeProCams</h2>
+            </div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">DPCS (ours)</h2>
+            </div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">Desired</h2>
+            </div>
           </div>
         </div>
         <div class="zoom-component">
@@ -525,13 +584,27 @@
             <div class="image-box zoom-preview placeholder" data-preview="6"></div>
 
             <!-- 文本区域 -->
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Surface</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Uncompensated</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">TPS+SL</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">CompenNeSt++</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">DeProCams</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">DPCS (ours)</h2></div>
-            <div class="text-row"><h2 class="title is-6" style="margin-bottom: 0.5rem;">Desired</h2></div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">Surface</h2>
+            </div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">Uncompensated</h2>
+            </div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">TPS+SL</h2>
+            </div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">CompenNeSt++</h2>
+            </div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">DeProCams</h2>
+            </div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">DPCS (ours)</h2>
+            </div>
+            <div class="text-row">
+              <h2 class="title is-6" style="margin-bottom: 0.5rem;">Desired</h2>
+            </div>
           </div>
         </div>
         <!-- zoom-in plus title -->
@@ -547,7 +620,7 @@
       <div class="container">
         <div id="results-carousel" class="carousel results-carousel">
           <div class="item">
-            <img src="static/images/metric.png" alt="Overview" />
+            <img src="static/images/METRIC.png" alt="Overview" />
             <h2 class="subtitle has-text-centered">
               Performance under different number of training images
             </h2>
@@ -557,8 +630,8 @@
     </div>
   </section>
 
-      <!-- Image carousel -->
-<section class="hero is-small">
+  <!-- Image carousel -->
+  <section class="hero is-small">
     <div class="hero-body">
       <div class="container">
         <div id="results-carousel" class="carousel results-carousel">
@@ -573,8 +646,8 @@
     </div>
   </section>
   <!-- End image carousel -->
-  
-<section class="hero is-small">
+
+  <section class="hero is-small">
     <div class="hero-body">
       <div class="container">
         <div id="results-carousel" class="carousel results-carousel">
@@ -663,14 +736,14 @@
 
   <!-- Statcounter tracking code -->
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-THPV1LNVZ7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-THPV1LNVZ7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-THPV1LNVZ7');
-</script>
+    gtag('config', 'G-THPV1LNVZ7');
+  </script>
 
   <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
 
@@ -690,7 +763,7 @@
 
         box.addEventListener('mousemove', (e) => {
           if (!isHovering) return;
-          
+
           // 获取当前悬停盒子的尺寸和位置
           const rect = e.target.getBoundingClientRect();
           const xPercent = (e.clientX - rect.left) / rect.width;
@@ -707,7 +780,7 @@
           boxes.forEach((b, index) => {
             const preview = component.querySelector(`[data-preview="${index}"]`);
             const imgSrc = b.querySelector('img').src;
-            
+
             preview.style.backgroundImage = `url(${imgSrc})`;
             preview.classList.remove('placeholder');
             preview.style.backgroundPosition =
